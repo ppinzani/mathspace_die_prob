@@ -23,16 +23,16 @@ n!/(n^n)
 Note: This expression can also be derived from the first one if we compute the numerators and divisors separately.
 
 ### Description
-The webapp consist on a homepage, This homepage contains 2 main sections: One with a form, where the user can submit a positive integer (greater than 1), and get the computed value for the probability using the both approaches described above. Also the runtime for each calculation is displayed. The secon part consist on a runtime analysys for different n values, to study the impact of growing n values.
+The web app consist on a homepage, This homepage contains 2 main sections: One with a form, where the user can submit a positive integer (greater than 1), and get the computed value for the probability using the both approaches described above. Also, the runtime for each calculation is displayed. The second part consists of a runtime analysis for different n values, to study the impact of growing n values.
 
 ### Extra considerations
-The project consist on one main app calles probability where all the logic is implemented. The functions that perform the probability computation are located in the functions.py file inside the probability app folder.
+The project consists of one main app called probability where all the logic is implemented. The functions that perform the probability computation are located in the functions.py file inside the probability app folder.
 
 ### Further improvement
-This project can be improved in many ways (This features were not added due to a lack of time), including:
-* Addign more exhaustive test for the view to test the calculation and data display properly.
+This project can be improved in many ways (These features were not added due to a lack of time), including:
+* Adding more exhaustive test for the view to test the calculation and data display properly.
 * Adding functional test using selenium to test the webapp from the user's point of view
-* Improving home.html display using bootstrap or some simmilar library to get a nicer GUI. Also a complete study of the timing analysis could be done, ploting the runtime vs n value curve for many values of n
+* Improving home.html display using bootstrap or some similar library to get a nicer GUI. Also, a complete study of the timing analysis could be done, plotting the runtime vs n value curve for many values of n
 
 
 
