@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Die Roll Probability Calculation</title>
+    </head>
+    <body >
+        <h1> Dice Roll Probability Calculation </h1>
+        <p> The following page computes the probability of rolling an n-sided die n times and getting all n numbers.
+            It compares 2 methods of calculation, the first one divides the total number of permutations of the n possible numbers
+            over all the possible die rolls: n!/( n^n ) </p>
+        <p> The second approach, uses an iterative approach, using the probability of getting one of the remaining numbers on
+            each die roll: 1 * (n-1)/n * (n-2)/n * ... 2/n * 1/n </p>
+        <p> Finally a runtime analysys for both approaches is presented for both approaches. There we can see the impact of
+            incrementing n in the calculation time.</p>
+
+        <h2> Probability Calculation </h2>
+        <form method="post">
+            {% csrf_token %}
+            <label>Input n value</label>
+            {{ form.n }}
+            <button type="submit">
+                Submit
+            </button>
+            <span>{{ form.n.errors }}</span>
+
+        </form>
+        <p> Probability computed using division approach: {{ probability_div }}. Measured time for {{ time_calls }} calls: {{time_div}}</p>
+        <p> Probability computed using iterative approach: {{ probability_it }}. Measured time for {{ time_calls }} calls: {{time_iter}}</p>
+
+        <h2> Timing analysys </h2>
+        <h4> Division Approach </h4>
+        <p> n=2 runtime:  {{ time_2_div }} </p>
+        <p> n=10 runtime:  {{ time_10_div }} </p>
+        <p> n=1000 runtime:  {{ time_1000_div }} </p>
+        <p> n=2000 runtime:  {{ time_2000_div }} </p>
+
+        <h4> Iterative Approach </h4>
+        <p> n=2 runtime:  {{ time_2_it }} </p>
+        <p> n=10 runtime:  {{ time_10_it }} </p>
+        <p> n=1000 runtime:  {{ time_1000_it }} </p>
+        <p> n=2000 runtime:  {{ time_2000_it }} </p>
+
+        <h4> Conclusions </h4>
+        <p> Running with moderately large values of n (1000) is <b>{{ penalty_div }}</b> times slower than n=2 for the division approach</p>
+        <p> Running with moderately large values of n (1000) is <b>{{ penalty_it }}</b> times slower than n=2 for the iterative approach</p>
+    </body>
+</html>
